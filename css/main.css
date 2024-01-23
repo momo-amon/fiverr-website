@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "fira", sans-serif;
+}
+
+body {
+  background-color: #1b1b1d;
+}
+
+/* start header */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+header .navbar {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .menu-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+header .navbar .menu-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: .2s;
+}
+
+header .navbar .menu-links a:hover {
+  color: #19a463;
+}
+
+.navbar .menu-links .join-btn a {
+  border: 1px solid #ffff;
+  border-radius: 4px;
+  padding: 8px 15px;
+}
+
+.navbar .menu-links .join-btn a:hover {
+  color: #fff;
+  background-color: #19a463;
+  border-color: transparent;
+}
+
+.navbar .open {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  padding: 5px 10px;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.navbar .open:hover {
+  color: #fff;
+  background-color: #19a463;
+  border-color: transparent;
+}
+
+.navbar .close {
+  color: #000;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: none;
+  padding: 5px 10px;
+  border: 2px solid #000;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+.navbar .close:hover {
+  color: #fff;
+  background-color: #19a463;
+  border-color: transparent;
+}
+
+/* end header */
+
+/* start section */
+.hero-section {
+  height: 100vh;
+  background-image: url(../images/hero-img.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-section .content {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  width: 100%;
+}
+
+.hero-section .content h1 {
+  color: #fff;
+  font-size: 3rem;
+  max-width: 630px;
+}
+
+.hero-section .seacrh-form {
+  display: flex;
+  height: 48px;
+  max-width: 630px;
+  margin-top: 30px;
+}
+
+.hero-section .seacrh-form input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background: #fff;
+  font-size: 1rem;
+  padding: 0 15px;
+  border-radius: 4px 0 0 4px;
+}
+
+.hero-section .seacrh-form button {
+  height: 100%;
+  width: 60px;
+  outline: none;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: #1dbf73;
+  transition: background 0.2s ease;
+}
+
+.hero-section .seacrh-form button:hover {
+  background-color: #19a463;
+}
+
+.hero-section .popular-tags {
+  display: flex;
+  color: #fff;
+  gap: 24px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.hero-section .popular-tags .tags {
+  list-style: none;
+  display: flex;
+}
+
+.hero-section .tags li {
+  margin-right: 20px;
+}
+
+.hero-section .tags li a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  padding: 4px 12px;
+  transition: .3s;
+}
+
+.hero-section .tags li a:hover {
+  color: #1b1b1d;
+  background-color: #fff;
+  border-color: transparent;
+}
+
+/* end section */
+
+/* start media screen */
+@media screen and (max-width :900px) {
+
+  .navbar .open,
+  .navbar .close {
+    display: block;
+  }
+
+  .navbar .menu-links {
+    background-color: #fff;
+    height: 100vh;
+    max-width: 300px;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    display: block;
+    padding: 75px 40px 0;
+    transition: left .2s ease;
+  }
+
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+
+  .navbar .menu-links li {
+    margin-bottom: 30px;
+  }
+
+  header .navbar .menu-links a {
+    color: #000;
+    font-size: 1.1rem;
+  }
+
+  .navbar .menu-links .join-btn a {
+    padding: 0;
+  }
+
+  .hero-section {
+    background-image: none;
+  }
+
+  .hero-section .content :is(h1, .seacrh-form) {
+    max-width: 100%;
+  }
+
+  .hero-section .content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 55px;
+  }
+
+  .hero-section .seacrh-form {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .hero-section .seacrh-form input {
+    border-radius: 4px;
+  }
+
+  .hero-section .seacrh-form button {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+
+  .hero-section .popular-tags {
+    display: none;
+  }
+}
+
+/* end media screen */
